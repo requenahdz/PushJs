@@ -7,17 +7,23 @@
 <H1>Push Notificaciones</H1>
 <p>Saludos</p>
 
+<button id="btn">Push Notificación</button>
+
 <script src="js/push.min.js"></script>
 <script>
-	Push.create("Hola desde requenahdz",{
+var btn = document.getElementById('btn');
+btn.addEventListenner('click',function(){
+Push.create("Hola desde requenahdz",{
 	body:"Esto es un pequeño saludo",
 	icon:"img/requenahdz.jpg",
 	timeout:3000,
 	onClick: function() {
 	this.close();
 	}
-
 	});
+});
+
+	
 </script>
 </body>
 </html>
