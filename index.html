@@ -1,30 +1,39 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Push Notificaciones</title>
-</head>
 <body>
-<H1>Push Notificaciones</H1>
-<p>Saludos</p>
+	<script>
 
-<button id="btn">Push Notificación</button>
+	  if (navigator.geolocation) {
+    console.log('Geolocation is supported!');
 
-<script src="js/push.min.js"></script>
-<script>
-var btn = document.getElementById('btn');
+    var geoSuccess = function(position) {
+      startPos = position;
+      console.log(startPos.coords.latitude);
+    console.log(startPos.coords.longitude);
+    };
 
-	btn.addEventListener('click',function(){
-	Push.create("Hola desde requenahdz",{
-		body:"Esto es un pequeño saludo desde una notificación 2",
-		icon:"img/requenahdz.jpg",
-		timeout:3000,
-		onClick: function() {
-		this.close();
-			}
-		});
-});
+    navigator.geolocation.getCurrentPosition(geoSuccess);
 
-	
-</script>
+
+  }
+  else {
+    console.log('Geolocation is not supported for this Browser/OS.');
+  }
+
+  document.write("Navegador: ");
+document.write(navigator.appName + "<br>");
+document.write("Versión del navegador: ");
+document.write(navigator.appVersion + "<br>");
+document.write("Código: ");
+document.write(navigator.appCodeName + "<br>");
+document.write("Plataforma: ");
+document.write(navigator.platform + "<br>");
+document.write("Cookies habilitadas: ");
+document.write(navigator.cookieEnabled + "<br>");
+document.write("Cabecera de agente de usuario del navegador: ");
+document.write(navigator.userAgent + "<br>");
+
+   
+
+	</script>
 </body>
 </html>
